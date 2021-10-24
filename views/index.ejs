@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="./../assets/css/index.css">
+</head>
+<body>
+    <h1><%= title %></h1>
+    <ul>
+        <% for(var i=0; i<find.length; i++) {%>
+            <li><%= find[i].rank %></li>
+        <% } %>
+    </ul>
+        <button id="btn">Odczyt z bazy</button>
+
+        <ul>
+            <li id="danePobrane1"></li>
+            <li id="danePobrane2"></li>
+            <li id="danePobrane3"></li>
+        </ul>
+
+
+
+
+        <form action="/" method="POST">
+            <input type="text" placeholder="name" name="name">
+            <input type="text" placeholder="rank" name="rank">
+            <input type="number" placeholder="age" name="age">
+            <button type="submit">Dodaj do bazy</button>
+        </form>
+
+
+        <form action="/update" method="POST">
+            <button>Uaktualnij</button>
+        </form>
+
+        <form action="/delete" method="POST">
+            <button>Usuń pierwszy</button>
+        </form>
+
+
+        <form action="/deleteChoosen" method="POST">
+            <select name="ktoryUsunac" id="">
+                <option value="0">1</option>
+                <option value="1">2</option>
+                <option value="2">3</option>
+            </select>
+            <button id="deleteChoosen">Usuń wybrany</button>
+        </form>
+
+
+    <script src="./../js/index.js"></script>
+</body>
+</html>
